@@ -1,0 +1,103 @@
+@use "./../mixins.scss" as *;
+
+.header {
+  padding: 0;
+  margin-left: -$mobile-padding;
+  width: 100vw;
+  min-width: $mobile-min-width;
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  background: rgb(112 142 166 / 83%);
+
+  @include on-tablet {
+    margin: 0;
+    margin-top: 1rem;
+    width: 100%;
+    flex-direction: column;
+    padding: 0.5rem 3rem;
+    justify-content: space-between;
+    border-radius: 0.5em;
+    border: solid 1px #10101247;
+    box-shadow: 0.8em 0.3em 0.3em #393a3d38;
+  }
+
+  @include on-desktop {
+    padding-inline: 0;
+    width: $desktop-min-width - 2 * $desktop-padding;
+    flex-direction: row;
+  }
+
+  &__title {
+    padding-block: 1rem;
+    display: flex;
+    font-size: 3rem;
+    line-height: 100%;
+    justify-content: center;
+    font-family: "Montserrat", serif;
+    font-style: normal;
+    -webkit-text-stroke: 3px #d9eced;
+    paint-order: stroke fill;
+    font-weight: normal;
+
+    @include on-tablet {
+      font-size: 5rem;
+    }
+
+    @include on-desktop {
+      flex-grow: 1;
+    }
+
+    &-lens {
+      color: #357adb;
+      background-image: url("/img/lens.png");
+      background-size: 1.6rem;
+      background-position: 0.19rem 1.1rem;
+      background-repeat: no-repeat;
+
+      @include on-tablet {
+        background-size: 2.9rem;
+        background-position: 0.21rem 1.7rem;
+      }
+    }
+  }
+
+  &__address {
+    margin: 0 2rem;
+    padding-block: 0.5rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    border-top: 1px solid #10101247;
+
+    @include on-desktop {
+      margin-inline: 0;
+
+      flex-direction: column;
+
+      border-top: none;
+      border-left: 1px solid #10101247;
+    }
+
+    &-phone,
+    &-mail {
+      margin-inline: 2rem;
+      display: flex;
+      gap: 0.5rem;
+      font-size: 1rem;
+      text-decoration: none;
+      color: black;
+      font-style: normal;
+      display: flex;
+      height: 1.2em;
+    }
+
+    &-icon {
+      height: 1em;
+      object-fit: contain;
+    }
+  }
+}

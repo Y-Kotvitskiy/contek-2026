@@ -1,0 +1,51 @@
+@use "./../mixins.scss" as *;
+
+.page {
+  margin: 0;
+  padding: 0;
+  min-width: $mobile-min-width;
+
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-style: italic;
+  font-weight: 300;
+
+  &__body {
+    min-width: $mobile-min-width;
+
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    overflow-y: hidden;
+    overflow-x: auto;
+
+    background: url("/img/background.jpg") center center / cover;
+    background-repeat: no-repeat;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.6);
+      z-index: -1;
+    }
+  }
+
+  &__services {
+    flex-grow: 1;
+    display: grid;
+    display: none;
+
+    gap: 40px;
+    overflow: hidden;
+
+    @include content-padding-inline;
+
+    @include on-tablet {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+}
