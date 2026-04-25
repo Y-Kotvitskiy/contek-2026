@@ -1,32 +1,31 @@
 @use "./../mixins.scss" as *;
 
 .header {
-  padding: 0;
-  margin-left: -$mobile-padding;
-  width: 100vw;
-  min-width: $mobile-min-width;
-  display: flex;
-  flex-direction: column;
+  &__content {
+    padding: 0;
+    margin-left: -$mobile-padding;
+    width: 100vw;
 
-  box-sizing: border-box;
-  background: rgb(112 142 166 / 83%);
-
-  @include on-tablet {
-    margin: 0;
-    margin-top: 1rem;
-    width: 100%;
+    display: flex;
     flex-direction: column;
-    padding: 0.5rem 3rem;
-    justify-content: space-between;
-    border-radius: 0.5em;
-    border: solid 1px #10101247;
-    box-shadow: 0.8em 0.3em 0.3em #393a3d38;
-  }
 
-  @include on-desktop {
-    padding-inline: 0;
-    width: $desktop-min-width - 2 * $desktop-padding;
-    flex-direction: row;
+    box-sizing: border-box;
+    background-color: $color-highlight-background;
+
+    @include on-tablet {
+      width: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 0.5em;
+      border: solid 1px #10101247;
+      box-shadow: 0.8em 0.3em 0.3em #393a3d38;
+
+      @include on-desktop {
+        padding-inline: 0;
+        // width: $desktop-min-width - 2 * $desktop-padding;
+        flex-direction: row;
+      }
+    }
   }
 
   &__title {
@@ -90,9 +89,10 @@
       font-size: 1rem;
       text-decoration: none;
       color: black;
-      font-style: normal;
       display: flex;
       height: 1.2em;
+
+      @include hover(transform, scale(1.03));
     }
 
     &-icon {

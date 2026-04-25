@@ -1,5 +1,20 @@
 .service {
+  flex-direction: column;
+  justify-content: space-around;
+
   img {
     height: 3rem;
+  }
+
+  &__video {
+    order: 1;
+  }
+
+  &__phone {
+    order: 0;
+  }
+
+  &__computers {
+    order: 2;
   }
 }

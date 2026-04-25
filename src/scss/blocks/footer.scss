@@ -1,34 +1,59 @@
 @use "./../mixins.scss" as *;
 
 .footer {
-  display: flex;
-  display: none;
-  flex-wrap: wrap;
-  padding: 48px 8px;
-  overflow-wrap: break-word;
+  &__content {
+    display: block;
+    padding: 0;
+    margin-left: -$mobile-padding;
+    width: 100vw;
+    background-color: $color-highlight-background;
+
+    @include on-tablet {
+      width: 100%;
+      margin: 0;
+      margin-top: 1rem;
+
+      border-radius: 0.5em;
+      border: solid 1px #10101247;
+      box-shadow: 0.8em 0.3em 0.3em #393a3d38;
+    }
+  }
 
   &__address {
+    padding: 0.5rem;
+
+    height: fit-content;
+
+    display: flex;
+    align-items: stretch;
+
+    gap: 0.5rem;
+
     &-title {
+      display: flex;
+      align-items: center;
       font-style: normal;
+      white-space: nowrap;
     }
 
     &-link {
       min-width: 0;
-      height: 1.2rem;
+      height: fit-content;
       padding-block: 0.2rem;
 
-      display: flex;
+      display: inline-flex;
       align-items: center;
       text-decoration: none;
       color: #000;
-      border: solid 1px #10101247;
 
       @include hover(transform, scale(1.03));
     }
 
     &-icon {
       height: 1rem;
-      object-fit: contain;
+      width: auto;
+      margin-right: 4px;
+      flex-shrink: 0;
     }
   }
 }
