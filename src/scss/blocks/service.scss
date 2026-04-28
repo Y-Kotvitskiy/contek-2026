@@ -1,5 +1,7 @@
 @use "./../mixins.scss" as *;
 
+$text-font-size: 1.4rem;
+
 @keyframes fadeLoop {
   0% {
     opacity: 0;
@@ -38,6 +40,7 @@
   animation: fadeLoop 12s infinite ease-in-out;
   animation-play-state: inherit;
 
+  min-height: 0;
   height: 100%;
   flex-direction: column;
   justify-content: space-around;
@@ -47,6 +50,9 @@
       rgb(198 214 217 / 30%) 100%);
   border-radius: 1em;
   box-sizing: border-box;
+
+  -webkit-touch-callout: none; 
+  user-select: none;
 
   @include on-tablet{
     grid-area: auto;
@@ -62,7 +68,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: $text-font-size;
     font-style: italic;
     font-weight: 300;
     box-sizing: border-box;
@@ -82,6 +88,7 @@
 
   img {
     height: 3rem;
+    pointer-events: none;
   }
 
   &__video {
@@ -100,7 +107,7 @@
   }
 
   &__title {
-    font-size: 1.2rem;
+    font-size: $text-font-size;
     font-weight: 300;
   }
 
