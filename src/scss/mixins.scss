@@ -2,9 +2,9 @@ $mobile-min-width: 320px;
 $tablet-min-width: 768px;
 $desktop-min-width: 1024px;
 
-$mobile-padding: 20px;
-$table-padding: 72px;
-$desktop-padding: 120px;
+$mobile-padding: 10px;
+$table-padding: 20px;
+$desktop-padding: 60px;
 $color-highlight-background: rgb(112 142 166 / 83%);
 
 @mixin on-tablet {
@@ -21,7 +21,8 @@ $color-highlight-background: rgb(112 142 166 / 83%);
 
 @mixin content-padding-inline {
   min-width: $mobile-min-width;
-  padding-inline: 20px;
+  padding-inline: $mobile-padding;
+  flex-grow: 1;
 
   @include on-tablet {
     padding-inline: $table-padding;
