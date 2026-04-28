@@ -22,13 +22,13 @@
     flex-direction: column;
     justify-content: center;
     height: 100dvh;
+    min-height: $min-height;
     box-sizing: border-box;
 
     background: url("/img/background.jpg") center center / cover;
     background-repeat: no-repeat;
 
     @include on-tablet {
-      min-height: 800px;
       padding-block: 1rem;
     }
 
@@ -43,7 +43,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      min-height: 800px;
+      min-height: $min-height;
       background-color: rgba(255, 255, 255, 0.6);
       z-index: -1;
     }
@@ -53,35 +53,6 @@
     display: flex;
     flex-grow: 1;
     flex-direction: column;
-
-    @include on-tablet {
-      max-height: 800px;
-    }
   }
 
-  &__services {
-    padding-block: 1rem;
-    display: flex;
-    align-items: stretch;
-    flex-grow: 1;
-
-    &-content {
-      width: 100%;
-      height: 100%;
-
-      display: grid;
-
-      gap: 0.5rem;
-      overflow: hidden;
-      grid-template-columns: repeat(3, 100%);
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-
-      box-sizing: border-box;
-
-      @include on-tablet {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-  }
 }

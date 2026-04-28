@@ -6,6 +6,7 @@ $mobile-padding: 10px;
 $table-padding: 20px;
 $desktop-padding: 60px;
 $color-highlight-background: rgb(112 142 166 / 83%);
+$min-height: 600px;
 
 @mixin on-tablet {
   @media (min-width: $tablet-min-width) {

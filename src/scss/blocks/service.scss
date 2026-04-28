@@ -1,18 +1,58 @@
 @use "./../mixins.scss" as *;
 
+@keyframes fadeLoop {
+  0% {
+    opacity: 0;
+    z-index: 0;
+  }
+
+  5% {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  /* Быстрое появление */
+  33% {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  /* Удержание видимости (1/3 времени) */
+  38% {
+    opacity: 0;
+    z-index: 0;
+  }
+
+  /* Исчезновение */
+  100% {
+    opacity: 0;
+  }
+}
+
 .service {
   display: flex;
+  grid-area: 1 / 1;
+ 
+  opacity: 0;
+  width: 100%;
+  animation: fadeLoop 12s infinite ease-in-out;
+  animation-play-state: inherit;
+
   height: 100%;
   flex-direction: column;
   justify-content: space-around;
-  background: radial-gradient(
-    circle,
-    rgb(198 214 217 / 30%) 0%,
-    rgb(112 142 166 / 60%) 50%,
-    rgb(198 214 217 / 30%) 100%
-  );
+  background: radial-gradient(circle,
+      rgb(198 214 217 / 30%) 0%,
+      rgb(112 142 166 / 60%) 50%,
+      rgb(198 214 217 / 30%) 100%);
   border-radius: 1em;
   box-sizing: border-box;
+
+  @include on-tablet{
+    grid-area: auto;
+    opacity: 1;
+    animation: none;
+  }
 
   &__content {
     max-height: 60%;
@@ -46,14 +86,17 @@
 
   &__video {
     order: 1;
+    animation-delay: 0s;
   }
 
   &__phone {
     order: 0;
+    animation-delay: 4s;
   }
 
   &__computers {
     order: 2;
+    animation-delay: 8s;
   }
 
   &__title {
