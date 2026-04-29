@@ -50,12 +50,25 @@
     }
 
     &-lens {
+      position: relative;
       color: #357adb;
-      background-image: url("/img/lens.png");
-      background-size: 2.9 * $base-font-size;
-      background-position: 0.21rem 1.7rem;
       background-repeat: no-repeat;
+
+      &::after{
+        content: '';
+        position: absolute;
+
+        top: 2 * $base-font-size;
+        left: 0.55 * $base-font-size;
+        width:  2 * $base-font-size;
+        height: 2 * $base-font-size;
+
+        background: url("/img/lens.png")  no-repeat center center / cover;
+        
+      }
     }
+
+
   }
 
   &__address {

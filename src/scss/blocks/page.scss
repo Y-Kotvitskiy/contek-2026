@@ -26,8 +26,6 @@
     min-height: $min-height;
     box-sizing: border-box;
 
-    // background: url("/img/background.jpg") center center / cover, rgba(255, 255, 255, 0.6);
-    // background-repeat: no-repeat;
     background:
       linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
       url("/img/background.jpg") no-repeat center / cover;
@@ -44,6 +42,7 @@
 
   &__content {
     display: flex;
+    max-height: $max-body-height;
     flex-grow: 1;
     flex-direction: column;
   }
