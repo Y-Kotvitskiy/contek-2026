@@ -52,7 +52,7 @@
     &-lens {
       color: #357adb;
       background-image: url("/img/lens.png");
-      background-size: 2.9rem;
+      background-size: 2.9 * $base-font-size;
       background-position: 0.21rem 1.7rem;
       background-repeat: no-repeat;
     }

@@ -8,6 +8,8 @@ $desktop-padding: 60px;
 $color-highlight-background: #708ea6;
 $min-height: 600px;
 
+$base-font-size: 16px;
+
 @mixin on-tablet {
   @media (min-width: $tablet-min-width) {
     @content;
