@@ -34,7 +34,7 @@ $text-font-size: 1.4rem;
 .service {
   display: flex;
   grid-area: 1 / 1;
- 
+
   opacity: 0;
   width: 100%;
   animation: fadeLoop 12s infinite ease-in-out;
@@ -44,24 +44,25 @@ $text-font-size: 1.4rem;
   height: 100%;
   flex-direction: column;
   justify-content: space-around;
-  background: radial-gradient(circle,
-      rgb(198 214 217 / 30%) 0%,
-      rgb(112 142 166 / 60%) 50%,
-      rgb(198 214 217 / 30%) 100%);
+  background: radial-gradient(
+    circle,
+    rgb(198 214 217 / 30%) 0%,
+    rgb(112 142 166 / 60%) 50%,
+    rgb(198 214 217 / 30%) 100%
+  );
   border-radius: 1em;
   box-sizing: border-box;
 
-  -webkit-touch-callout: none; 
+  -webkit-touch-callout: none;
   user-select: none;
 
-  @include on-tablet{
+  @include on-tablet {
     grid-area: auto;
     opacity: 1;
     animation: none;
   }
 
   &__content {
-    max-height: 60%;
     flex-grow: 1;
 
     display: flex;
@@ -72,6 +73,10 @@ $text-font-size: 1.4rem;
     font-style: italic;
     font-weight: 300;
     box-sizing: border-box;
+
+    @media (min-height: 610px) {
+      max-height: 60%;
+    }
 
     @include on-tablet {
       font-size: 1.2rem;

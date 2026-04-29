@@ -52,26 +52,28 @@
     &-lens {
       position: relative;
       color: #357adb;
-      
-      &::after{
-        content: '';
+
+      &::after {
+        content: "";
 
         position: absolute;
-        top: 2 * $base-font-size;
-        left: 0.55 * $base-font-size;
-        width:  2 * $base-font-size;
-        height: 2 * $base-font-size;
 
-        background: url("/img/lens.png")  no-repeat center center / cover;
-        
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -26%);
+
+        width: 47%;
+        height: 33%;
+        border-radius: 50%;
+
+        background: url("/img/lens.png") no-repeat center center / cover;
+        box-shadow: 0 0 6px 1px #fff;
       }
 
-      &--is-samsung::after{
+      &--is-samsung::after {
         display: none;
       }
     }
-
-
   }
 
   &__address {
