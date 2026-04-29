@@ -6,7 +6,8 @@
     padding: 0;
     margin-left: -$mobile-padding;
     width: 100vw;
-    background-color: $color-highlight-background;
+    background-color: rgba($color-highlight-background, 0.43);
+
 
     @include on-tablet {
       width: 100%;
@@ -15,6 +16,7 @@
       border-radius: 0.5em;
       border: solid 1px #10101247;
       box-shadow: 0.8em 0.3em 0.3em #393a3d38;
+      background-color: rgba($color-highlight-background, 0.83);
     }
   }
 

@@ -10,20 +10,20 @@
     flex-direction: column;
 
     box-sizing: border-box;
-    background-color: $color-highlight-background;
+    background-color: rgba($color-highlight-background, 0.43);
 
     @include on-tablet {
       margin: 0;
       width: 100%;
       flex-direction: column;
       justify-content: space-between;
+      background-color: rgba($color-highlight-background, 0.83);
       border-radius: 0.5em;
       border: solid 1px #10101247;
       box-shadow: 0.8em 0.3em 0.3em #393a3d38;
 
       @include on-desktop {
         padding-inline: 0;
-        // width: $desktop-min-width - 2 * $desktop-padding;
         flex-direction: row;
       }
     }
