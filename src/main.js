@@ -18,3 +18,13 @@ slider.addEventListener('touchend', () => {
 slider.addEventListener('touchcancel', () => {
   slider.classList.remove(IS_PAUSED);
 }, { passive: true });
+
+
+if (navigator.userAgent.match(/SamsungBrowser/i)) {
+  const lens = document.querySelector('.header__title-lens')
+
+  if (lens) {
+     lens.classList.add('header__title-lens--is-samsung')
+  }
+}
+
