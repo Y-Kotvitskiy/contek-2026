@@ -1,57 +1,56 @@
- @use "./../mixins.scss" as *;
+@use "./../mixins.scss" as *;
 
+.services {
+  display: flex;
+  flex-grow: 1;
+  align-items: stretch;
 
- .services {
-     padding-block: 1rem;
-     display: flex;
-     align-items: stretch;
-     flex-grow: 1;
+  padding-block: 1rem;
 
-     &__content {
-         width: 100%;
-         height: 100%;
+  &__content {
+    box-sizing: border-box;
 
-         display: grid;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
 
-         gap: 0.5rem;
-         overflow: hidden;
-         grid-template-columns: 1fr;
+    width: 100%;
+    height: 100%;
 
-         box-sizing: border-box;
+    overflow: hidden;
 
-         transform: scale(1);
-         transition: transform 0.3s ease;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+
+    @include on-tablet {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        box-shadow: inset 0px 0px 0px 5px #008aff1f;
+        transform: scale(1.03);
+
+        animation-play-state: paused;
 
         @include on-tablet {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+          box-shadow: none;
+          transform: scale(1);
         }
+      }
+    }
 
-        @media (hover: hover) and (pointer: fine) {
-            &:hover {
-                box-shadow: inset 0px 0px 0px 5px #008aff1f;
-                transform: scale(1.03);
+    &--is_paused {
+      box-shadow: inset 0px 0px 0px 5px #008aff1f;
 
-                animation-play-state: paused;
+      transform: scale(1.03);
 
-                @include on-tablet {
-                    box-shadow: none;
-                    transform: scale(1);
-                }
-            }
-        }
+      animation-play-state: paused;
 
-
-        &--is_paused {
-            box-shadow: inset 0px 0px 0px 5px #008aff1f;
-
-            transform: scale(1.03);
-
-            animation-play-state: paused;
-
-            @include on-tablet {
-                transform: scale(1);
-                box-shadow: none;
-            }
-        }
-     }
- }
+      @include on-tablet {
+        box-shadow: none;
+        transform: scale(1);
+      }
+    }
+  }
+}

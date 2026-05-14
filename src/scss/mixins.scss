@@ -1,4 +1,4 @@
-$mobile-min-width: 320px;
+$mobile-min-width: 280px;
 $tablet-min-width: 768px;
 $desktop-min-width: 1024px;
 
@@ -24,18 +24,19 @@ $base-font-size: 16px;
 }
 
 @mixin content-padding-inline {
+  flex-grow: 1;
+
   min-width: $mobile-min-width;
   padding-inline: $mobile-padding;
-  flex-grow: 1;
 
   @include on-tablet {
     padding-inline: $table-padding;
   }
 
   @include on-desktop {
-    margin-inline: auto;
     max-width: $desktop-min-width;
     padding-inline: $desktop-padding;
+    margin-inline: auto;
   }
 }
 

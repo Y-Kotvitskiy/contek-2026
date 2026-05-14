@@ -3,32 +3,29 @@
 .footer {
   &__content {
     display: block;
+    width: calc(100% + 2 * $mobile-padding);
     padding: 0;
     margin-left: -$mobile-padding;
-    width: 100vw;
     background-color: rgba($color-highlight-background, 0.43);
-
 
     @include on-tablet {
       width: 100%;
       margin: 0;
 
-      border-radius: 0.5em;
-      border: solid 1px #10101247;
-      box-shadow: 0.8em 0.3em 0.3em #393a3d38;
       background-color: rgba($color-highlight-background, 0.83);
+      border: solid 1px #10101247;
+      border-radius: 0.5em;
+      box-shadow: 0.8em 0.3em 0.3em #393a3d38;
     }
   }
 
   &__address {
-    padding: 0.5rem;
-
-    height: fit-content;
-
     display: flex;
+    gap: 0.5rem;
     align-items: stretch;
 
-    gap: 0.5rem;
+    height: fit-content;
+    padding: 0.5rem;
 
     &-title {
       display: flex;
@@ -37,23 +34,22 @@
     }
 
     &-link {
+      display: inline-flex;
+      align-items: center;
       min-width: 0;
       height: fit-content;
       padding-block: 0.2rem;
-
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
       color: #000;
+      text-decoration: none;
 
       @include hover(transform, scale(1.03));
     }
 
     &-icon {
-      height: 1rem;
-      width: auto;
-      margin-right: 4px;
       flex-shrink: 0;
+      width: auto;
+      height: 1rem;
+      margin-right: 4px;
     }
   }
 }

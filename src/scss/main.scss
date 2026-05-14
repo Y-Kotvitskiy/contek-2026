@@ -9,8 +9,8 @@
 
 html,
 body {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 button,
@@ -26,4 +26,8 @@ ol {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+div {
+  box-sizing: border-box;
 }

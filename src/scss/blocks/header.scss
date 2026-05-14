@@ -2,44 +2,43 @@
 
 .header {
   &__content {
-    padding: 0;
-    margin-left: -$mobile-padding;
-    width: 100vw;
+    box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
-
-    box-sizing: border-box;
+    width: calc(100% + 2 * $mobile-padding);
+    padding: 0;
+    margin-left: -$mobile-padding;
     background-color: rgba($color-highlight-background, 0.43);
 
     @include on-tablet {
-      margin: 0;
-      width: 100%;
       flex-direction: column;
       justify-content: space-between;
+      width: 100%;
+      margin: 0;
       background-color: rgba($color-highlight-background, 0.83);
-      border-radius: 0.5em;
       border: solid 1px #10101247;
+      border-radius: 0.5em;
       box-shadow: 0.8em 0.3em 0.3em #393a3d38;
 
       @include on-desktop {
-        padding-inline: 0;
         flex-direction: row;
+        padding-inline: 0;
       }
     }
   }
 
   &__title {
-    padding-block: 1rem;
     display: flex;
-    font-size: 5 * $base-font-size;
-    line-height: 100%;
     justify-content: center;
+    padding-block: 1rem;
     font-family: "Montserrat", sans-serif;
+    font-size: 4 * $base-font-size;
     font-style: normal;
-    -webkit-text-stroke: 3px #d9eced;
-    paint-order: stroke fill;
     font-weight: normal;
+    line-height: 100%;
+    paint-order: stroke fill;
+    -webkit-text-stroke: 3px #d9eced;
 
     @include on-tablet {
       font-size: 5 * $base-font-size;
@@ -54,20 +53,19 @@
       color: #357adb;
 
       &::after {
-        content: "";
-
         position: absolute;
 
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -26%);
 
         width: 47%;
         height: 33%;
-        border-radius: 50%;
+        content: "";
 
         background: url("/img/lens.png") no-repeat center center / cover;
+        border-radius: 50%;
         box-shadow: 0 0 6px 1px #fff;
+        transform: translate(-50%, -26%);
       }
 
       &--is-samsung::after {
@@ -77,19 +75,17 @@
   }
 
   &__address {
-    margin: 0 2rem;
-    padding-block: 0.5rem;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-block: 0.5rem;
+    margin: 0 2rem;
 
     border-top: 1px solid #10101247;
 
     @include on-desktop {
-      margin-inline: 0;
-
       flex-direction: column;
+      margin-inline: 0;
 
       border-top: none;
       border-left: 1px solid #10101247;
@@ -97,14 +93,14 @@
 
     &-phone,
     &-mail {
-      margin-inline: 2rem;
+      display: flex;
       display: flex;
       gap: 0.5rem;
-      font-size: 1rem;
-      text-decoration: none;
-      color: black;
-      display: flex;
       height: 1.2em;
+      margin-inline: 2rem;
+      font-size: 1rem;
+      color: black;
+      text-decoration: none;
 
       @include hover(transform, scale(1.03));
     }

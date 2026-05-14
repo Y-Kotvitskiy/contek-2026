@@ -17,7 +17,11 @@
   "type": "commonjs",
   "devDependencies": {
     "gh-pages": "^6.3.0",
+    "postcss-scss": "^4.0.9",
     "sass": "^1.99.0",
+    "stylelint": "^17.9.1",
+    "stylelint-config-recess-order": "^7.7.0",
+    "stylelint-order": "^8.1.1",
     "vite": "^8.0.10"
   }
 }
